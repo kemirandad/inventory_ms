@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Boards</title>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <ol class="breadcrumb my-4">
+              <li class="breadcrumb-item active">Items</li>
+            </ol>
+            <table class="table">
+              <thead class="thead-inverse">
+                <tr>
+                    <th>Item</th>
+                    <th>Stok</th>
+                    <th>Sizes</th>
+                    <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in items %}
+                  <tr>
+                    <td>
+                        {{ item.name }}<br>
+                        <small style="color: #888">{{ item.image }}</small>
+                        </td>
+                        <td><small style="color: #888">{{ item.stock }}</small></td>
+                        <td><small style="color: #888">{{ item.size }}</small></td>
+                        <td><small style="color: #888">{{ item.price }}</small></td>
+                    </tr>
+                    {% endfor %}
+              </tbody>
+            </table>
+          </div>
+    </body>
+
+</html>
