@@ -10,7 +10,7 @@ class Item(models.Model):
     stock = models.IntegerField(default=0)
     price = models.FloatField(null=True)
     size = ArrayField(
-            models.IntegerField(blank=True),
+            models.CharField(blank=True, max_length=50),
             size=8, null=True
         )
     image = models.TextField(blank=True, null=True)
